@@ -24,15 +24,15 @@ They are variable referenced in the shell environment and will only last the lif
 
 ##### How to store them in memory?
 ###### hash table
-	- O(1) lookup
-	- potential for collisions
-	- memory inefficient
+ - O(1) lookup
+ - potential for collisions
+ - memory inefficient
 
 ###### queue [x]
-	- O(1) insertion
-	- O(n) lookup
-	- memory efficient
-	- easy to work w/, implement, conceptualize
+ - O(1) insertion
+ - O(n) lookup
+ - memory efficient
+ - easy to work w/, implement, conceptualize
 
 #### env
 display environment variables
