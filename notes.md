@@ -3,6 +3,7 @@
 ## Command Consumption
 ### Simple Command Execution
 
+
 ### $PATH
 
 ## Builtins w/ POSIX Specs
@@ -35,32 +36,46 @@ They are variable referenced in the shell environment and will only last the lif
 
 #### env
 display environment variables
+iterate our list of env variables and print them to screen with a newline after every print
 
 #### setenv
 set environment variables
+insert an environment variable to the list of variables
 
 #### unsetenv
-unset environment variables
+remove an environment variable from the list of variables
 
 ## Pipes, Redirects, Logical Ops... etc...
 ### Error and Return Values
+Display the process exit value or display the error if an error occurred
 
 ### Redirections
 #### <
 
-#### >> >
+#### >
+Redirect output of some process to a file
+
+#### >>
+Append the output of some process to a file
+ - open(fd) as w+
 
 #### |
+Pipe the output of one process as input to another process
+ - This is determined by a queue of execution??
+
+#### &>$(fd)
+Redirect output to file descriptor
 
 #### Advanced Redirection
 ##### File Output Aggregation
 
 ##### Heredoc <<
+Special-purpose code block
+Uses redirection to feed a command list to an interactive program or command
 
 ### Logical Operators
-#### "&& ||"
+#### && ||
 
-#### "& |"
 
 ### "; Separator"
 
