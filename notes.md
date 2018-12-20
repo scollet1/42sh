@@ -58,20 +58,20 @@ unset environment variables
 ##### Heredoc <<
 
 ### Logical Operators
-#### && &
+#### "&& ||"
 
-#### & |
+#### "& |"
 
-### ; Separator
+### "; Separator"
 
 # Optional
 
 ## Inhibitors
-### "/"  """ "'"
+### "\"/\"  \"\"\" \"\'\""
 
-## Globbing / Regex
+## "Globbing / Regex"
 
-## Back Quotes "`"
+## "Back Quotes \"`\""
 
 ## Sub Shells
 
@@ -81,7 +81,7 @@ unset environment variables
 ### Export
 
 ## Command History (BIG ONE)
-### ! Builtin
+### "! Builtin"
 
 ## Line Edition
 
