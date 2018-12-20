@@ -23,12 +23,12 @@ They are variable referenced in the shell environment and will only last the lif
 	they are declared in a configuration file
 
 ##### How to store them in memory?
-###### hash table
+[ ] hash table
  - O(1) lookup
  - potential for collisions
  - memory inefficient
 
-###### queue [x]
+[x] queue
  - O(1) insertion
  - O(n) lookup
  - memory efficient
