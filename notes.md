@@ -36,10 +36,12 @@ They are variable referenced in the shell environment and will only last the lif
 
 #### env
 display environment variables
+
 iterate our list of env variables and print them to screen with a newline after every print
 
 #### setenv
 set environment variables
+
 insert an environment variable to the list of variables
 
 #### unsetenv
@@ -71,6 +73,7 @@ Redirect output to file descriptor
 
 ##### Heredoc <<
 Special-purpose code block
+
 Uses redirection to feed a command list to an interactive program or command
 
 ### Logical Operators
@@ -79,6 +82,7 @@ Evaluation of two arguments at a time
 
 ### ; Separator
 Commands separated by a ";" are executed sequentially with the shell waiting for each command to terminate in turn
+
 The return status is the exit status of the last command executed
 
 # Optional
@@ -92,6 +96,7 @@ Expanding wild cards
 
 ### *
 Greedily consumes characters before, after, or sandwiched between another string of characters
+
 By itself, it consumes all
 
 ### ?
@@ -99,6 +104,7 @@ Single-character consumption
 
 ## "Back Quotes \"`\""
 Everything enclosed in back-ticks is evaluated before a given command
+
 Its output is then used as input for that command
 
 ## Sub Shells ()
@@ -114,6 +120,7 @@ Export exposes variables to other programs
 ## Command History (BIG ONE)
 ### !
 Runs the command given to it with a previous invocation and its parameters
+
 ```
 $> echo "hello"
 hello
@@ -136,8 +143,11 @@ Read from parameters on the command line
 
 ## Dynamic Autocompletion (BIG ALSO)
 Reference the command history, I believe using termcaps
+
 It would be helpful to store this list in memory for a short period and then dump to disk periodically for efficiency
+
 Afterwards the file with history will be referenced... a la .bash_history...
+
 Another option with the same motivation is to maintain a list of commands and dedicate a wait-free thread to pulling from the head while commands are appended to the tail
 
 ## Job Control (Even BIGGER)
@@ -146,6 +156,7 @@ List the jobs running in the background
 
 ### fg bg
 fg(foreground) switches a job running in the background(bg) to the foreground
+
 bg restarts a suspended job and runs it in the background
 
 ### Background Process &
