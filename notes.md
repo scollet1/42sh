@@ -3,7 +3,6 @@
 ## Command Consumption
 ### Simple Command Execution
 
-
 ### $PATH
 
 ## Builtins w/ POSIX Specs
@@ -133,7 +132,6 @@ hello
 Executes previous command
 
 ## Line Edition
-
 
 ## File Descriptors
 A list of fds that either must already exist (0, 1, 2) or must be opened before referencing
