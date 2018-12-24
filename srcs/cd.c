@@ -1,8 +1,22 @@
 #include "../incl/42sh.h"
 
-t_env	*cd(t_env *env, const char *path)
+int		cd(t_env *env, const char *path)
 {
-	(void)path;
+	DIR* dir;
+
+	if ((dir = opendir(path)))
+	{
+		/* Directory exists. */
+		closedir(dir);
+		if (!chdir(path))
+			return (SUCCESS);
+	}
+	else if (ENOENT == errno)
+		/* Directory does not exist. */
+		return (FAILURE);
+	else
+		/* opendir() failed for some other reason. */
+		env->status.error.errcode = ERR_SYSTEM;
 	/*
 	 * check if path exists
 	 * if true:
@@ -11,5 +25,5 @@ t_env	*cd(t_env *env, const char *path)
 	 * 		set error and print to user
 	 * 	return env
 	 */
-	return (env);
+	return (FAILURE);
 }

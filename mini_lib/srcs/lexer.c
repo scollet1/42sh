@@ -29,22 +29,22 @@ char	tokenize(char *str, t_list *delims, char **token)
 
     char function(char c, char **token, char *str, size_t len) {
         *token = strndup(str, len);
-        printf("token %s returning %c\n", *token, c);
+//        printf("token %s returning %c\n", *token, c);
         return (c);
     }
-	printf("sing %s doub %s str %s\n", singq, doubq, str);
+//	printf("sing %s doub %s str %s\n", singq, doubq, str);
     if (singq) {
         if (doubq) {
             if (singq < doubq) {
-                printf("sinq %s doub %s\n", singq, doubq);
+//                printf("sinq %s doub %s\n", singq, doubq);
                 if (singq > str) {
-                    printf("sing > str\n");
+//                    printf("sing > str\n");
                     return function('!', token, str, singq - str);
                 }
                 else if (!(end = mini_memchr(++singq, '\'', len)))
                     return function('\'', token, ++str, len);
                 else {
-                    printf("%s %s\n", end, singq);
+//                    printf("%s %s\n", end, singq);
                     return function('!', token, str, ++end - singq);
                 }
             }
@@ -59,16 +59,16 @@ char	tokenize(char *str, t_list *delims, char **token)
         else if (!(end = mini_memchr(singq, '\'', len)))
             return function('\'', token, ++str, len);
         else {
-            printf("%s %s\n", end, singq);
+//            printf("%s %s\n", end, singq);
             return function('!', token, str, ++end - singq);
         }
     }
 	else if (doubq)
 	{
-        printf("doub %s\n", doubq);
+//        printf("doub %s\n", doubq);
         if (doubq > str) {
             *token = strndup(str, doubq - str);
-            printf("%s\n", *token);
+//            printf("%s\n", *token);
         }
 	    else if (!(end = mini_memchr(++doubq, '\"', len)))
 	        return function('\"', token, ++str, len);
@@ -136,9 +136,9 @@ char	lex_tok(char *str, t_list **tokens, t_list *delims)
 			}
 			else if (enqueue(tokens, &token, len) == FAILURE)
 				return (0);
-			printf("return tok %s\n", token);
+//			printf("return tok %s\n", token);
 			str += ret == '!' ? len:len + 2;
-			printf("str %s\n", str);
+//			printf("str %s\n", str);
 		}
 	}
 //	printf("%c\n", ret);

@@ -4,6 +4,8 @@
 # include <stdio.h>
 # include <stdint.h>
 # include <unistd.h>
+#include <dirent.h>
+#include <errno.h>
 
 # include "../mini_lib/incl/mini_lib.h"
 
@@ -111,5 +113,6 @@ int					shell_setenv(t_env *env, char **opts);
 int					shell_unsetenv(t_env *env, char **opts);
 int 				shell_env(t_env *env, char**opts);
 void				print(int args, ...);
+int					cd(t_env *env, const char *path);
 
 #endif

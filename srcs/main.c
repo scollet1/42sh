@@ -58,7 +58,7 @@ int		main(void)
 	/*
 	** Always initialize your environment and check for errors on the return
 	*/
-	if (init_shell(&env))
+	if (init_shell(&env) == SUCCESS)
 	{
 		putendl(WELCOME);
 		/*
